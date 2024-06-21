@@ -1,4 +1,4 @@
-package com.uvapp
+package com.chrisflemming.liveuv
 
 import android.app.Application
 import com.facebook.react.PackageList

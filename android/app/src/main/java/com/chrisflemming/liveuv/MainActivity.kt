@@ -1,4 +1,4 @@
-package com.uvapp
+package com.chrisflemming.liveuv
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate
