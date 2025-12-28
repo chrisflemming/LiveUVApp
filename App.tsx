@@ -75,6 +75,7 @@ const App = () => {
       <Stack.Navigator initialRouteName={location === NO_LOCATION_SET ? "Settings" : "Main"}> 
         <Stack.Screen name="Main" component={MainScreen} initialParams={{ location: location }} options={({ route, navigation }) => ({
             headerShadowVisible: false, 
+            headerTransparent: false,
             headerTitleStyle: {fontFamily: 'SpaceMono-Regular', fontSize: 32, color: 'white'},
             headerTitleAllowFontScaling: true,
             headerTitleAlign: "center",
@@ -90,8 +91,8 @@ const App = () => {
             )}
           )}
           />
-        <Stack.Screen name="Settings" component={SettingsScreen} options={{title: 'Select Location', headerTintColor: 'white', headerShadowVisible: false, headerBackTitleVisible: false, headerTitleStyle: {fontFamily: 'SpaceMono-Regular', fontSize: 28, color: 'white'}, headerStyle: {backgroundColor: 'blue'}}} />
-        <Stack.Screen name="About" component={AboutScreen} options={{title: 'About',  headerTintColor: 'white', headerShadowVisible: false, headerBackTitleVisible: false, headerTitleStyle: {fontFamily: 'SpaceMono-Regular', fontSize: 32, color: 'white'}, headerStyle: {backgroundColor: 'blue'}}} />
+        <Stack.Screen name="Settings" component={SettingsScreen} options={{title: 'Select Location', headerTintColor: 'white', headerTransparent: false, headerShadowVisible: false, headerBackButtonDisplayMode: 'minimal', headerTitleStyle: {fontFamily: 'SpaceMono-Regular', fontSize: 28, color: 'white'}, headerStyle: {backgroundColor: 'blue'}}} />
+        <Stack.Screen name="About" component={AboutScreen} options={{title: 'About',  headerTintColor: 'white', headerTransparent: false, headerShadowVisible: false, headerBackButtonDisplayMode: 'minimal', headerTitleStyle: {fontFamily: 'SpaceMono-Regular', fontSize: 32, color: 'white'}, headerStyle: {backgroundColor: 'blue'}}} />
       </Stack.Navigator>
     </NavigationContainer>
   );
