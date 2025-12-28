@@ -99,7 +99,7 @@ const App = () => {
 };
 
 const styles = StyleSheet.create({ 
-  settingsButton: {paddingBottom: Platform.OS === 'ios' ? 10 : 0, paddingTop: Platform.OS === 'android' ? 5 : 0}
+  settingsButton: { paddingBottom: Platform.OS === 'ios' ? 10 : 0, paddingTop: Platform.OS === 'android' ? 3 : 0}
 });
 
 export default App;

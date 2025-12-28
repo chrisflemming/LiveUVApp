@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, FlatList, ScrollView } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { RootStackParamList, locationsData } from '../App';
+import { CommonActions } from '@react-navigation/native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
@@ -26,7 +27,12 @@ const SettingsScreen = ({ route, navigation }: Props) => {
   const saveLocation = async (locationCode : string) => {
     setLocation(locationCode);
     await AsyncStorage.setItem('location', locationCode);
-    navigation.replace('Main', { location: locationCode });
+    navigation.dispatch(
+      CommonActions.reset({
+        index: 0,
+        routes: [{ name: 'Main', params: { location: locationCode } }],
+      })
+    );
   };
 
   return (
